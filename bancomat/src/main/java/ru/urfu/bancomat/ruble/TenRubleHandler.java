@@ -10,17 +10,16 @@ import ru.urfu.bancomat.banknote.BanknoteHandler;
 /**
  * @author lifeandfree
  */
-public class TenRubleHandler extends BanknoteHandler {
+public class TenRubleHandler extends RubleHandlerBase {
+
+    protected int value = 10;
 
     public TenRubleHandler(BanknoteHandler nextHandler) {
         super(nextHandler);
     }
 
     @Override
-    public boolean Validate(String banknote) {
-        if (banknote.equals("10 Рублей")) {
-            return true;
-        }
-        return super.Validate(banknote);
+    protected int getValue() {
+        return this.value;
     }
 }

@@ -10,11 +10,13 @@ package ru.urfu.bancomat.banknote;
  */
 public abstract class BanknoteHandler {
 
-    private final BanknoteHandler _nextHandler;
+    private BanknoteHandler _nextHandler;
 
     protected BanknoteHandler(BanknoteHandler nextHandler) {
         _nextHandler = nextHandler;
     }
+
+    public abstract Currency CashOut(Currency cur);
 
     public boolean Validate(String banknote) {
         return _nextHandler != null && _nextHandler.Validate(banknote);

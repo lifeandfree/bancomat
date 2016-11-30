@@ -17,4 +17,9 @@ public class FiftyDollarHandler extends DollarHandlerBase {
     public FiftyDollarHandler(BanknoteHandler nextHandler) {
         super(nextHandler);
     }
+
+    @Override
+    protected int getValue() {
+        return this.value;
+    }
 }

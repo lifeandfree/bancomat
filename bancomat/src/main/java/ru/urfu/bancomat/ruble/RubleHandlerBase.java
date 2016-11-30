@@ -1,21 +1,13 @@
-/**
- * @author lifeandfree
- *         Пакет: ru.urfu.bancomat
- *         Дата создания класса: 23 нояб. 2016 г.
- */
-package ru.urfu.bancomat.dollar;
+package ru.urfu.bancomat.ruble;
 
 import ru.urfu.bancomat.banknote.BanknoteHandler;
 import ru.urfu.bancomat.banknote.Currency;
 
-/**
- * @author lifeandfree
- */
-public abstract class DollarHandlerBase extends BanknoteHandler {
+public abstract class RubleHandlerBase extends BanknoteHandler {
 
     protected int value;
 
-    protected DollarHandlerBase(BanknoteHandler nextHandler) {
+    protected RubleHandlerBase(BanknoteHandler nextHandler) {
         super(nextHandler);
     }
 
@@ -24,7 +16,7 @@ public abstract class DollarHandlerBase extends BanknoteHandler {
         if (currency.getQuantity() >= this.getValue()) {
             int num = currency.getQuantity() / this.getValue();
             int remainder = currency.getQuantity() % this.getValue();
-            System.out.print(num + "x" + this.getValue() + "$ ");
+            System.out.println(num + "x" + this.getValue() + "рублей");
             if (remainder != 0) {
                 return new Currency(remainder);
             }
